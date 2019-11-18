@@ -1,0 +1,44 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+# ROLE TABLE HANDLERS
+
+ postrole:
+   class: logging.FileHandler
+   level: INFO
+   formatter: simple
+   filename:  loggerfiles/roleslogger/postrole.log
+
+ getupdaterole:
+   class: logging.FileHandler
+   level: INFO
+   formatter: simple
+   filename:  loggerfiles/roleslogger/getupdaterole.log
+
+ consolerole:
+   class: logging.StreamHandler
+   level: INFO
+   formatter: simple
+
+
+
+loggers:
+
+ postroles:
+   level: INFO
+   handlers: [postrole]
+   propagate: True
+
+ getupdateroles:
+   level: INFO
+   handlers: [getupdaterole]
+   propagate: True
+
+ consoleroles:
+   level: INFO
+   handlers: [consolerole]
+   propagate: True

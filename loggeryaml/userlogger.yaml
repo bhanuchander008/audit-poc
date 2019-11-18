@@ -1,0 +1,71 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+ getupdateuser:
+  class: logging.FileHandler
+  level: INFO
+  formatter: simple
+  filename: loggerfiles/userlogger/getupdateuser.log
+
+
+ signup_user:
+  class: logging.FileHandler
+  level: INFO
+  formatter: simple
+  filename: loggerfiles/userlogger/signup_user.log
+
+ signin_user:
+  class: logging.FileHandler
+  level: INFO
+  formatter: simple
+  filename: loggerfiles/userlogger/signin_user.log
+
+ resetpassworduser:
+  class: logging.FileHandler
+  level: INFO
+  formatter: simple
+  filename: loggerfiles/userlogger/signupuser.log
+
+
+ consoleuser:
+   class: logging.StreamHandler
+   level: INFO
+   formatter: simple
+
+
+
+#LOGGERS
+
+loggers:
+
+
+ getupdateusers:
+   level: INFO
+   handlers: [getupdateuser]
+   propagate: True
+
+ signup_users:
+   level: INFO
+   handlers: [signup_user]
+   propagate: True
+
+ signin_users:
+   level: INFO
+   handlers: [signin_user]
+   propagate: True
+
+
+ resetpasswordusers:
+   level: INFO
+   handlers: [resetpassworduser]
+   propagate: True
+
+
+ consoleusers:
+   level: INFO
+   handlers: [consoleuser]
+   propagate: True

@@ -1,0 +1,43 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+ simple:
+   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+
+
+ getpostlibrary:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/librarylogger/getpostlibrary.log
+
+ getupdatelibrary:
+   class: logging.FileHandler
+   level: DEBUG
+   formatter: simple
+   filename:  loggerfiles/librarylogger/getupdatelibrary.log
+
+ consolelibrary:
+   class: logging.StreamHandler
+   level: DEBUG
+   formatter: simple
+
+
+
+loggers:
+
+ getpostlibrarys:
+   level: DEBUG
+   handlers: [getpostlibrary]
+   propagate: True
+
+ getupdatelibrarys:
+   level: DEBUG
+   handlers: [getupdatelibrary]
+   propagate: True
+
+ consolelibrarys:
+   level: DEBUG
+   handlers: [consolelibrary]
+   propagate: True
